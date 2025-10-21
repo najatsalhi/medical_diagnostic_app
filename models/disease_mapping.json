@@ -1,0 +1,562 @@
+{
+    "0": {
+        "name": "Grippe",
+        "examens": ["Test PCR", "Radiographie thoracique"],
+        "service": "Service Infectiologie"
+    },
+    "1": {
+        "name": "Rhume Commun",
+        "examens": ["Examen clinique"],
+        "service": "Service Medecine Generale"
+    },
+    "2": {
+        "name": "Eczéma",
+        "examens": ["Examen dermatologique"],
+        "service": "Service Dermatologie"
+    },
+    "3": {
+        "name": "Asthme",
+        "examens": ["Spirométrie", "Radiographie thoracique"],
+        "service": "Service Pneumologie"
+    },
+    "4": {
+        "name": "Hyperthyroïdie",
+        "examens": ["Dosage hormonal", "IRM thyroïdienne"],
+        "service": "Service Endocrinologie"
+    },
+    "5": {
+        "name": "Rhinite Allergique",
+        "examens": ["Test allergène", "Examen ORL"],
+        "service": "Service ORL"
+    },
+    "6": {
+        "name": "Troubles Anxieux",
+        "examens": ["Consultation psychiatrique"],
+        "service": "Service Psychiatrie"
+    },
+    "7": {
+        "name": "Diabète",
+        "examens": ["Glycémie", "HbA1c"],
+        "service": "Service Endocrinologie"
+    },
+    "8": {
+        "name": "Gastro-entérite",
+        "examens": ["Coproculture"],
+        "service": "Service Gastro-entérologie"
+    },
+    "9": {
+        "name": "Pancréatite",
+        "examens": ["Amylasémie", "Scanner abdominal"],
+        "service": "Service Gastro-entérologie"
+    },
+    "10": {
+        "name": "Polyarthrite Rhumatoïde",
+        "examens": ["Bilan inflammatoire", "Radiographie articulaire"],
+        "service": "Service Rhumatologie"
+    },
+    "11": {
+        "name": "Dépression",
+        "examens": ["Consultation psychologique"],
+        "service": "Service Psychiatrie"
+    },
+    "12": {
+        "name": "Cancer du Foie",
+        "examens": ["IRM hépatique", "Biopsie"],
+        "service": "Service Oncologie"
+    },
+    "13": {
+        "name": "AVC",
+        "examens": ["Scanner cérébral", "IRM cérébrale"],
+        "service": "Service Neurologie"
+    },
+    "14": {
+        "name": "Infection Urinaire",
+        "examens": ["ECBU", "Examen clinique"],
+        "service": "Service Urologie"
+    },
+    "15": {
+        "name": "Dengue",
+        "examens": ["Sérologie Dengue", "Numération sanguine"],
+        "service": "Service Infectiologie"
+    },
+    "16": {
+        "name": "Hépatite",
+        "examens": ["Bilan hépatique", "Sérologie"],
+        "service": "Service Hépatologie"
+    },
+    "17": {
+        "name": "Cancer du Rein",
+        "examens": ["Scanner abdominal", "Biopsie"],
+        "service": "Service Oncologie"
+    },
+    "18": {
+        "name": "Migraine",
+        "examens": ["IRM cérébrale", "Consultation neurologique"],
+        "service": "Service Neurologie"
+    },
+    "19": {
+        "name": "Dystrophie Musculaire",
+        "examens": ["Biopsie musculaire", "EMG"],
+        "service": "Service Neurologie"
+    },
+    "20": {
+        "name": "Sinusite",
+        "examens": ["Scanner des sinus", "Examen ORL"],
+        "service": "Service ORL"
+    },
+    "21": {
+        "name": "Colite Ulcéreuse",
+        "examens": ["Coloscopie", "Biopsie"],
+        "service": "Service Gastro-entérologie"
+    },
+    "22": {
+        "name": "Trouble Bipolaire",
+        "examens": ["Consultation psychiatrique"],
+        "service": "Service Psychiatrie"
+    },
+    "23": {
+        "name": "Bronchite",
+        "examens": ["Radio thoracique", "Examen clinique"],
+        "service": "Service Pneumologie"
+    },
+    "24": {
+        "name": "Paralysie Cérébrale",
+        "examens": ["IRM cérébrale"],
+        "service": "Service Neurologie"
+    },
+    "25": {
+        "name": "Cancer Colorectal",
+        "examens": ["Coloscopie", "Biopsie"],
+        "service": "Service Oncologie"
+    },
+    "26": {
+        "name": "Maladie Cardiaque Hypertensive",
+        "examens": ["ECG", "Échographie cardiaque"],
+        "service": "Service Cardiologie"
+    },
+    "27": {
+        "name": "Sclérose en Plaques",
+        "examens": ["IRM cérébrale", "PL"],
+        "service": "Service Neurologie"
+    },
+    "28": {
+        "name": "Infarctus du Myocarde",
+        "examens": ["ECG", "Troponine"],
+        "service": "Service Cardiologie"
+    },
+    "29": {
+        "name": "Infection des Voies Urinaires",
+        "examens": ["ECBU", "Examen clinique"],
+        "service": "Service Urologie"
+    },
+    "30": {
+        "name": "Ostéoporose",
+        "examens": ["Ostéodensitométrie"],
+        "service": "Service Rhumatologie"
+    },
+    "31": {
+        "name": "Pneumonie",
+        "examens": ["Radio Thorax", "CRP"],
+        "service": "Service Pneumologie"
+    },
+    "32": {
+        "name": "Athérosclérose",
+        "examens": ["Angiographie", "Scanner"],
+        "service": "Service Cardiologie"
+    },
+    "33": {
+        "name": "BPCO",
+        "examens": ["Spirométrie", "Scanner thoracique"],
+        "service": "Service Pneumologie"
+    },
+    "34": {
+        "name": "Épilepsie",
+        "examens": ["EEG", "IRM cérébrale"],
+        "service": "Service Neurologie"
+    },
+    "35": {
+        "name": "Hypertension",
+        "examens": ["Bilan tensionnel", "ECG"],
+        "service": "Service Cardiologie"
+    },
+    "36": {
+        "name": "TOC",
+        "examens": ["Consultation psychiatrique"],
+        "service": "Service Psychiatrie"
+    },
+    "37": {
+        "name": "Psoriasis",
+        "examens": ["Examen dermatologique"],
+        "service": "Service Dermatologie"
+    },
+    "38": {
+        "name": "Rubéole",
+        "examens": ["Sérologie Rubéole"],
+        "service": "Service Infectiologie"
+    },
+    "39": {
+        "name": "Cirrhose",
+        "examens": ["Bilan hépatique", "Fibroscan"],
+        "service": "Service Hépatologie"
+    },
+    "40": {
+        "name": "Conjonctivite",
+        "examens": ["Examen ophtalmologique"],
+        "service": "Service Ophtalmologie"
+    },
+    "41": {
+        "name": "Maladie du Foie",
+        "examens": ["Bilan hépatique", "Échographie hépatique"],
+        "service": "Service Hépatologie"
+    },
+    "42": {
+        "name": "Paludisme",
+        "examens": ["Goutte épaisse", "Test rapide"],
+        "service": "Service Infectiologie"
+    },
+    "43": {
+        "name": "Spina Bifida",
+        "examens": ["IRM", "Consultation neurologique"],
+        "service": "Service Neurologie"
+    },
+    "44": {
+        "name": "Maladie Rénale",
+        "examens": ["Créatininémie", "Échographie rénale"],
+        "service": "Service Néphrologie"
+    },
+    "45": {
+        "name": "Arthrose",
+        "examens": ["Radiographie articulaire"],
+        "service": "Service Rhumatologie"
+    },
+    "46": {
+        "name": "Syndrome de Klinefelter",
+        "examens": ["Caryotype", "Consultation génétique"],
+        "service": "Service Génétique Médicale"
+    },
+    "47": {
+        "name": "Acné",
+        "examens": ["Examen dermatologique"],
+        "service": "Service Dermatologie"
+    },
+    "48": {
+        "name": "Tumeur Cérébrale",
+        "examens": ["IRM cérébrale", "Scanner cérébral"],
+        "service": "Service Oncologie"
+    },
+    "49": {
+        "name": "Fibrose Kystique",
+        "examens": ["Test de la sueur", "Génétique"],
+        "service": "Service Pneumologie"
+    },
+    "50": {
+        "name": "Glaucome",
+        "examens": ["Tonométrie", "Examen ophtalmologique"],
+        "service": "Service Ophtalmologie"
+    },
+    "51": {
+        "name": "Rage",
+        "examens": ["Test PCR Rabies"],
+        "service": "Service Infectiologie"
+    },
+    "52": {
+        "name": "Varicelle",
+        "examens": ["Examen clinique"],
+        "service": "Service Infectiologie"
+    },
+    "53": {
+        "name": "Maladie Coronarienne",
+        "examens": ["Coronarographie"],
+        "service": "Service Cardiologie"
+    },
+    "54": {
+        "name": "Fibromyalgie",
+        "examens": ["Examen clinique"],
+        "service": "Service Rhumatologie"
+    },
+    "55": {
+        "name": "Hémophilie",
+        "examens": ["Test de coagulation"],
+        "service": "Service Hématologie"
+    },
+    "56": {
+        "name": "Hypoglycémie",
+        "examens": ["Glycémie"],
+        "service": "Service Endocrinologie"
+    },
+    "57": {
+        "name": "Lymphome",
+        "examens": ["Biopsie ganglionnaire", "Scanner"],
+        "service": "Service Oncologie"
+    },
+    "58": {
+        "name": "Tuberculose",
+        "examens": ["Test Mantoux", "Radiographie pulmonaire"],
+        "service": "Service Pneumologie"
+    },
+    "59": {
+        "name": "Cancer du Poumon",
+        "examens": ["Scanner thoracique", "Biopsie"],
+        "service": "Service Oncologie"
+    },
+    "60": {
+        "name": "Hypothyroïdie",
+        "examens": ["Dosage hormonal"],
+        "service": "Service Endocrinologie"
+    },
+    "61": {
+        "name": "Trouble du Spectre Autistique",
+        "examens": ["Consultation pédopsychiatrique"],
+        "service": "Service Psychiatrie Infantile"
+    },
+    "62": {
+        "name": "Mélanome",
+        "examens": ["Biopsie cutanée"],
+        "service": "Service Dermatologie"
+    },
+    "63": {
+        "name": "Cancer Ovarien",
+        "examens": ["Échographie pelvienne", "CA-125"],
+        "service": "Service Gynécologie"
+    },
+    "64": {
+        "name": "Syndrome de Turner",
+        "examens": ["Caryotype", "Consultation génétique"],
+        "service": "Service Génétique Médicale"
+    },
+    "65": {
+        "name": "Virus Zika",
+        "examens": ["Sérologie Zika"],
+        "service": "Service Infectiologie"
+    },
+    "66": {
+        "name": "Cataracte",
+        "examens": ["Examen ophtalmologique"],
+        "service": "Service Ophtalmologie"
+    },
+    "67": {
+        "name": "Pneumonie à Pneumocystis",
+        "examens": ["Radiographie thoracique", "Test PCR"],
+        "service": "Service Pneumologie"
+    },
+    "68": {
+        "name": "Scoliose",
+        "examens": ["Radiographie rachidienne"],
+        "service": "Service Orthopédie"
+    },
+    "69": {
+        "name": "Drépanocytose",
+        "examens": ["Électrophorèse de l'hémoglobine"],
+        "service": "Service Hématologie"
+    },
+    "70": {
+        "name": "Tétanos",
+        "examens": ["Examen clinique"],
+        "service": "Service Réanimation"
+    },
+    "71": {
+        "name": "Anémie",
+        "examens": ["Hémogramme"],
+        "service": "Service Hématologie"
+    },
+    "72": {
+        "name": "Choléra",
+        "examens": ["Coproculture"],
+        "service": "Service Infectiologie"
+    },
+    "73": {
+        "name": "Endométriose",
+        "examens": ["Laparoscopie", "IRM pelvienne"],
+        "service": "Service Gynécologie"
+    },
+    "74": {
+        "name": "Septicémie",
+        "examens": ["Hémocultures"],
+        "service": "Service Réanimation"
+    },
+    "75": {
+        "name": "Apnée du Sommeil",
+        "examens": ["Polysomnographie"],
+        "service": "Service Pneumologie"
+    },
+    "76": {
+        "name": "Trisomie 21",
+        "examens": ["Caryotype"],
+        "service": "Service Génétique Médicale"
+    },
+    "77": {
+        "name": "Virus Ebola",
+        "examens": ["Test PCR Ebola"],
+        "service": "Service Infectiologie"
+    },
+    "78": {
+        "name": "Maladie de Lyme",
+        "examens": ["Sérologie Lyme"],
+        "service": "Service Infectiologie"
+    },
+    "79": {
+        "name": "Cancer du Pancréas",
+        "examens": ["Scanner abdominal", "CA 19-9"],
+        "service": "Service Oncologie"
+    },
+    "80": {
+        "name": "Pneumothorax",
+        "examens": ["Radio thoracique", "Drain thoracique"],
+        "service": "Service Urgences"
+    },
+    "81": {
+        "name": "Appendicite",
+        "examens": ["Échographie abdominale", "Scanner abdominal"],
+        "service": "Service Chirurgie Générale"
+    },
+    "82": {
+        "name": "Cancer de l'Œsophage",
+        "examens": ["Fibroscopie", "Biopsie"],
+        "service": "Service Oncologie"
+    },
+    "83": {
+        "name": "VIH/SIDA",
+        "examens": ["Test VIH", "Charge virale"],
+        "service": "Service Infectiologie"
+    },
+    "84": {
+        "name": "Syndrome de Marfan",
+        "examens": ["Examen génétique", "Échographie cardiaque"],
+        "service": "Service Cardiologie"
+    },
+    "85": {
+        "name": "Maladie de Parkinson",
+        "examens": ["Examen clinique", "IRM cérébrale"],
+        "service": "Service Neurologie"
+    },
+    "86": {
+        "name": "Hémorroïdes",
+        "examens": ["Examen clinique", "Anuscopie"],
+        "service": "Service Gastro-entérologie"
+    },
+    "87": {
+        "name": "SOPK",
+        "examens": ["Échographie pelvienne", "Dosage hormonal"],
+        "service": "Service Gynécologie"
+    },
+    "88": {
+        "name": "Lupus Érythémateux",
+        "examens": ["Bilan immunologique"],
+        "service": "Service Rhumatologie"
+    },
+    "89": {
+        "name": "Fièvre Typhoïde",
+        "examens": ["Hémoculture", "Test de Widal"],
+        "service": "Service Infectiologie"
+    },
+    "90": {
+        "name": "Cancer du Sein",
+        "examens": ["Mammographie", "Biopsie"],
+        "service": "Service Oncologie"
+    },
+    "91": {
+        "name": "Rougeole",
+        "examens": ["Sérologie"],
+        "service": "Service Infectiologie"
+    },
+    "92": {
+        "name": "Ostéomyélite",
+        "examens": ["IRM", "Biopsie osseuse"],
+        "service": "Service Orthopédie"
+    },
+    "93": {
+        "name": "Poliomyélite",
+        "examens": ["Test PCR", "Examen clinique"],
+        "service": "Service Infectiologie"
+    },
+    "94": {
+        "name": "Insuffisance Rénale Chronique",
+        "examens": ["Créatininémie", "Échographie rénale"],
+        "service": "Service Néphrologie"
+    },
+    "95": {
+        "name": "Hépatite B",
+        "examens": ["Sérologie", "Charge virale"],
+        "service": "Service Hépatologie"
+    },
+    "96": {
+        "name": "Syndrome de Prader-Willi",
+        "examens": ["Test génétique"],
+        "service": "Service Génétique Médicale"
+    },
+    "97": {
+        "name": "Cancer de la Thyroïde",
+        "examens": ["Échographie thyroïdienne", "Biopsie"],
+        "service": "Service Endocrinologie"
+    },
+    "98": {
+        "name": "Cancer de la Vessie",
+        "examens": ["Cystoscopie", "Biopsie"],
+        "service": "Service Urologie"
+    },
+    "99": {
+        "name": "Otite Moyenne",
+        "examens": ["Examen ORL", "Otoscopie"],
+        "service": "Service ORL"
+    },
+    "100": {
+        "name": "Syndrome de Tourette",
+        "examens": ["Consultation neurologique"],
+        "service": "Service Neurologie"
+    },
+    "101": {
+        "name": "Maladie d'Alzheimer",
+        "examens": ["IRM cérébrale", "Tests cognitifs"],
+        "service": "Service Neurologie"
+    },
+    "102": {
+        "name": "Démence",
+        "examens": ["IRM cérébrale", "Consultation neurologique"],
+        "service": "Service Neurologie"
+    },
+    "103": {
+        "name": "Diverticulite",
+        "examens": ["Scanner abdominal", "Coloscopie"],
+        "service": "Service Gastro-entérologie"
+    },
+    "104": {
+        "name": "Oreillons",
+        "examens": ["Sérologie", "Examen clinique"],
+        "service": "Service Infectiologie"
+    },
+    "105": {
+        "name": "Cholécystite",
+        "examens": ["Échographie abdominale"],
+        "service": "Service Gastro-entérologie"
+    },
+    "106": {
+        "name": "Cancer de la Prostate",
+        "examens": ["PSA", "Biopsie"],
+        "service": "Service Urologie"
+    },
+    "107": {
+        "name": "Schizophrénie",
+        "examens": ["Consultation psychiatrique"],
+        "service": "Service Psychiatrie"
+    },
+    "108": {
+        "name": "Goutte",
+        "examens": ["Dosage acide urique", "Examen clinique"],
+        "service": "Service Rhumatologie"
+    },
+    "109": {
+        "name": "Cancer Testiculaire",
+        "examens": ["Échographie scrotale", "Biopsie"],
+        "service": "Service Oncologie"
+    },
+    "110": {
+        "name": "Amygdalite",
+        "examens": ["Examen ORL"],
+        "service": "Service ORL"
+    },
+    "111": {
+        "name": "Syndrome de Williams",
+        "examens": ["Caryotype", "Examen génétique"],
+        "service": "Service Génétique Médicale"
+    }
+}

@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" action="{{ url_for('result') }}" class="diagnostic-form">
+        <div class="form-section patient-info">
+            <h3>Informations Patient</h3>
+            <div class="form-group">
+                <label for="LastName">Nom :</label>
+                <input type="text" id="LastName" name="LastName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="FirstName">Prénom :</label>
+                <input type="text" id="FirstName" name="FirstName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="CNE">CNE :</label>
+                <input type="text" id="CNE" name="CNE" required>
+            </div>
+        </div>
+
+        <div class="form-section symptoms">
+            <h3>Symptômes et Données Médicales</h3>
+            <div class="form-group">
+                <label for="age">Âge :</label>
+                <input type="number" id="age" name="age" min="0" max="150" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Sexe :</label>
+                <select id="gender" name="gender" required>
+                    <option value="0">Homme</option>
+                    <option value="1">Femme</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fever">Fièvre :</label>
+                <select id="fever" name="fever" required>
+                    <option value="0">Non</option>
+                    <option value="1">Oui</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cough">Toux :</label>
+                <select id="cough" name="cough" required>
+                    <option value="0">Non</option>
+                    <option value="1">Oui</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fatigue">Fatigue :</label>
+                <select id="fatigue" name="fatigue" required>
+                    <option value="0">Non</option>
+                    <option value="1">Oui</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="difficulty_breathing">Essoufflement :</label>
+                <select id="difficulty_breathing" name="difficulty_breathing" required>
+                    <option value="0">Non</option>
+                    <option value="1">Oui</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="blood_pressure">Pression Artérielle :</label>
+                <select id="blood_pressure" name="blood_pressure" required>
+                    <option value="0">Basse</option>
+                    <option value="1">Normale</option>
+                    <option value="2">Élevée</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cholesterol_level">Cholestérol :</label>
+                <select id="cholesterol_level" name="cholesterol_level" required>
+                    <option value="0">Normal</option>
+                    <option value="1">Haut</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-predict">Prédire</button>
+        </div>
+    </form>
+</div>
+
+<style>
+.diagnostic-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.form-section h3 {
+    margin-top: 0;
+    color: #2196f3;
+    font-size: 1.2em;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #495057;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.btn-predict {
+    background: #2196f3;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-predict:hover {
+    background: #1976d2;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Ajouter un Médecin</title>
+    <style>
+        :root {
+            --primary-color: #1e88e5;
+            --primary-dark: #1565c0;
+            --accent-color: #43a047;
+            --danger-color: #e53935;
+            --light-bg: #f5f9ff;
+            --border-color: #e0e0e0;
+            --text-color: #333;
+            --text-light: #757575;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            height: 60px;
+        }
+        
+        .app-title {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .app-title h1 {
+            font-size: 24px;
+            color: var(--primary-dark);
+        }
+        
+        .app-title p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .card h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-col {
+            flex: 1;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.2);
+        }
+        
+        .required::after {
+            content: '*';
+            color: var(--danger-color);
+            margin-left: 4px;
+        }
+        
+        .help-text {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 14px;
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .flash-messages {
+            margin-bottom: 20px;
+        }
+        
+        .flash {
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .flash-success {
+            background-color: rgba(67, 160, 71, 0.1);
+            border-left: 4px solid var(--accent-color);
+            color: #2e7d32;
+        }
+        
+        .flash-error {
+            background-color: rgba(229, 57, 53, 0.1);
+            border-left: 4px solid var(--danger-color);
+            color: #c62828;
+        }
+        
+        .close-flash {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: inherit;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--primary-dark);
+        }
+
+        .doctors-list {
+            margin-top: 30px;
+        }
+
+        .doctor-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .doctor-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .doctor-name {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--primary-dark);
+        }
+
+        .doctor-specialty {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .doctor-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='logo_chu.png') }}" alt="Logo CHU" class="logo">
+                <div class="app-title">
+                    <h1>Administration CHU</h1>
+                    <p>Centre Hospitalier Mohammed VI Oujda</p>
+                </div>
+            </div>
+            <div class="actions">
+                <a href="{{ url_for('main_page') }}" class="btn">
+                    <span>⬅️ Retour à l'application</span>
+                </a>
+            </div>
+        </header>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash flash-{{ category }}">
+                            {{ message }}
+                            <button class="close-flash" onclick="this.parentElement.style.display='none'">×</button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        <a href="{{ url_for('admin_dashboard') }}" class="back-link">
+            <span>⬅️</span> Retour au tableau de bord
+        </a>
+        
+        <div class="card">
+            <h2>👨‍⚕️ Ajouter un nouveau médecin</h2>
+            
+            <form action="{{ url_for('admin_add_doctor') }}" method="POST">
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="username" class="required">Identifiant</label>
+                            <input type="text" id="username" name="username" required>
+                            <div class="help-text">Exemple: dr.dupont</div>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="password" class="required">Mot de passe</label>
+                            <input type="password" id="password" name="password" required>
+                            <div class="help-text">8 caractères minimum</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="nom_complet" class="required">Nom complet</label>
+                            <input type="text" id="nom_complet" name="nom_complet" required>
+                            <div class="help-text">Exemple: Dr. Jean Dupont</div>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="specialite" class="required">Spécialité</label>
+                            <input type="text" id="specialite" name="specialite" required>
+                            <div class="help-text">Exemple: Cardiologie</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="numero_ordre" class="required">Numéro d'ordre</label>
+                            <input type="text" id="numero_ordre" name="numero_ordre" required>
+                            <div class="help-text">Numéro d'identification professionnel</div>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="email" class="required">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="help-text">Adresse email professionnelle</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signature">Signature</label>
+                    <textarea id="signature" name="signature" rows="3"></textarea>
+                    <div class="help-text">Format: Nom complet, Titre et Spécialité, Institution</div>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        Ajouter le médecin
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="doctors-list">
+            <h2>Médecins enregistrés</h2>
+            {% if medecins %}
+                {% for username, info in medecins.items() %}
+                    <div class="doctor-item">
+                        <div class="doctor-info">
+                            <div class="doctor-name">{{ info.nom_complet }}</div>
+                            <div class="doctor-specialty">{{ info.specialite }} - N° {{ info.numero_ordre }}</div>
+                        </div>
+                        <div class="doctor-actions">
+                            <a href="#" class="btn btn-primary btn-small">Modifier</a>
+                            <button class="btn btn-danger btn-small">Supprimer</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Aucun médecin enregistré.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="footer">
+        © {{ current_year }} CHU Mohammed VI Oujda - Système de Diagnostic Médical
+    </div>
+
+    <script>
+        // Animation pour les messages flash
+        document.addEventListener('DOMContentLoaded', function() {
+            const flashMessages = document.querySelectorAll('.flash');
+            flashMessages.forEach(msg => {
+                setTimeout(() => {
+                    msg.style.opacity = '0';
+                    setTimeout(() => {
+                        msg.style.display = 'none';
+                    }, 500);
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>

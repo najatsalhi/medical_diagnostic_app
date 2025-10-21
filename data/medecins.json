@@ -1,0 +1,29 @@
+{
+    "dr.smith": {
+        "password": "password123",
+        "nom_complet": "Dr. Jean Smith",
+        "specialite": "Médecine Générale",
+        "numero_ordre": "123456",
+        "email": "dr.smith@hopital.com",
+        "signature": "Dr. Jean Smith\nMédecin Généraliste\nCHU Mohammed VI Oujda",
+        "role": "admin"
+    },
+    "dr.martin": {
+        "password": "cardio2024",
+        "nom_complet": "Dr. Marie Martin",
+        "specialite": "Cardiologie",
+        "numero_ordre": "789012",
+        "email": "dr.martin@hopital.com",
+        "signature": "Dr. Marie Martin\nCardiologue\nCHU Mohammed VI Oujda",
+        "role": "medecin"
+    },
+    "dr.dupont": {
+        "password": "pneumo2024",
+        "nom_complet": "Dr. Pierre Dupont",
+        "specialite": "Pneumologie",
+        "numero_ordre": "345678",
+        "email": "dr.dupont@hopital.com",
+        "signature": "Dr. Pierre Dupont\nPneumologue\nCHU Mohammed VI Oujda",
+        "role": "medecin"
+    }
+}
