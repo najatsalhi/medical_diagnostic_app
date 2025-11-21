@@ -21,6 +21,9 @@ body {
     align-items: center;
 }
 
+/* Keep header visible at the top so sidebar appears below it */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+
 .nav-brand img {
     height: 40px;
 }
@@ -133,8 +136,18 @@ body {
 }
 
 .admin-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
+}
+
+.admin-header h1 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.admin-info {
+    color: #666;
+    font-size: 14px;
 }
 
 /* Result Page */
@@ -162,3 +175,258 @@ body {
     background: #ffebee;
     color: #c62828;
 }
+
+/* Force square UI for login elements (override inline/stated rules) */
+.login-container, .login-box, .login-button, .forgot-button, .form-group input, .demo-accounts, .alert, .success-message, .error-message {
+    border-radius: 0 !important;
+}
+
+/* Make login box edges crisp and centered */
+.login-box {
+    overflow: hidden;
+}
+
+.admin-layout {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+.admin-sidebar {
+    width: 320px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 16px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+.admin-sidebar nav a {
+    display: block;
+    padding: 10px 12px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+.admin-sidebar nav a:hover { background:#f0f7ff; color:#1565c0 }
+.admin-main { flex:1 1 auto }
+
+/* Layout helper for admin pages: header + body */
+.admin-body { display:flex; gap:20px; align-items:flex-start; }
+.admin-header { position:sticky; top:76px; z-index:900; background:transparent; padding:12px 0; }
+
+/* ensure sidebar sits below the fixed navbar/header */
+.admin-sidebar { position: sticky; top: calc(76px + 16px); }
+.admin-sidebar nav a.active { background:#e8f5ff; color:#0b63b7; font-weight:600 }
+.admin-card { background:#fff; border-radius:6px; padding:16px; box-shadow:0 1px 6px rgba(0,0,0,0.04); margin-bottom:16px }
+.stat-grid { display:flex; gap:12px; align-items:center; margin-bottom:12px }
+.stat-card { padding:10px 14px; border-radius:6px; color:#333; background:#f8fafc; border:1px solid #eef2f6; min-width:120px; text-align:center }
+.stat-card .stat-title { font-size:12px; color:#666; margin-bottom:6px }
+.stat-card .stat-value { font-size:20px; font-weight:700; color:#111 }
+.doctors-table { width:100%; border-collapse:collapse }
+.doctors-table th, .doctors-table td { padding:12px; border-bottom:1px solid #eee; text-align:left }
+.add-doctor-form { max-width:560px; display:grid; gap:12px }
+
+/* Improve form spacing and button full-width */
+.add-doctor-form input,
+.add-doctor-form select,
+.add-doctor-form textarea {
+    padding: 12px;
+    border: 1px solid #e6eef6;
+    border-radius: 6px;
+    background: #fbfdff;
+}
+
+.btn-submit, .btn-add {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+@media (max-width:900px){
+    .stat-grid{ grid-template-columns: repeat(2,1fr) }
+    .admin-layout { flex-direction:column }
+    .admin-sidebar { width:100% }
+}
+
+/* Sidebar badge (count) */
+.sidebar-badge {
+    display: inline-block;
+    background: #e8f5ff;
+    color: var(--primary-dark, #1565c0);
+    border-radius: 999px;
+    padding: 3px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* Make small-stats responsive: 2 columns under 900px, 1 column under 576px */
+@media (max-width: 900px) {
+    .small-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+    .small-stats { grid-template-columns: 1fr; }
+}
+
+/* Extracted admin dashboard variables and layout rules (moved from template) */
+:root {
+    --primary-color: #1e88e5;
+    --primary-dark: #1565c0;
+    --accent-color: #43a047;
+    --danger-color: #e53935;
+    --light-bg: #f5f9ff;
+    --border-color: #e0e0e0;
+    --text-color: #333;
+    --text-light: #757575;
+    --card-bg1: linear-gradient(135deg, #42a5f5, #1976d2);
+    --card-bg2: linear-gradient(135deg, #66bb6a, #388e3c);
+    --card-bg3: linear-gradient(135deg, #ffb74d, #f57c00);
+    --card-bg4: linear-gradient(135deg, #7e57c2, #512da8);
+}
+
+html, body { height: 100%; }
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    min-height: 100%;
+}
+
+/* make dashboard take full browser width */
+.container {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 18px 28px;
+    min-height: calc(100vh - 120px);
+}
+
+/* Left sidebar layout */
+.admin-layout {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    align-content: stretch;
+    min-height: calc(100vh - 140px);
+}
+
+.admin-sidebar {
+    width: 320px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 22px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    height: calc(100vh - 40px);
+    position: sticky;
+    top: 20px;
+    overflow: auto;
+    font-size: 15px;
+}
+
+.admin-sidebar a {
+    display: block;
+    padding: 12px 14px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.admin-sidebar a:hover {
+    background: #f0f7ff;
+    color: #1565c0;
+}
+
+.admin-main {
+    flex: 1 1 auto;
+    min-height: calc(100vh - 40px);
+    overflow: auto;
+    padding-bottom: 40px;
+}
+
+/* Compact small statistic cards shown in main dashboard */
+.small-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+    align-items: stretch;
+}
+
+.small-stat-card {
+    background: white;
+    border-radius: 8px;
+    padding: 12px 14px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 72px;
+}
+
+.small-stat-card .small-title {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.small-stat-card .small-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-top: 6px;
+}
+
+/* small-stat-card visual tweaks */
+.small-stat-card { transition: transform .15s ease, box-shadow .15s ease }
+.small-stat-card:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(16,56,102,0.06) }
+
+/* Recent activity inside sidebar */
+.sidebar-recent {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px dashed #eee;
+}
+
+.sidebar-recent h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+}
+
+.sidebar-recent .activity-item {
+    padding: 8px 0;
+    border-bottom: none;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.sidebar-recent .activity-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    border-radius: 6px;
+    background: rgba(30,136,229,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-recent .activity-title { font-size: 13px; }
+.sidebar-recent .activity-time { font-size: 11px; color: var(--text-light); }
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2196f3;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.container, .admin-container, .admin-main { padding-top: 76px; } 

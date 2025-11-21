@@ -50,7 +50,7 @@
             margin: 50px auto;
             background: rgba(255, 255, 255, 0.95);
             padding: 40px;
-            border-radius: 15px;
+            border-radius: 0;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 
                         0 5px 15px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
@@ -116,7 +116,7 @@
             width: 100%;
             padding: 15px;
             border: 2px solid #e9ecef;
-            border-radius: 8px;
+            border-radius: 0;
             font-size: 16px;
             transition: all 0.3s ease;
             background: rgba(255, 255, 255, 0.9);
@@ -276,16 +276,29 @@
             border-top: 1px solid #ecf0f1;
         }
         
-        .forgot-link {
-            color: #3498db;
+        .forgot-button {
+            display: inline-block;
+            width: 100%;
+            max-width: 260px;
+            padding: 10px 14px;
+            margin: 0 auto;
+            background: transparent;
+            color: #007bff;
+            border: 2px solid #007bff;
+            border-radius: 0;
+            font-weight: 600;
+            text-align: center;
             text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
+            transition: all 0.15s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,123,255,0.08);
         }
-        
-        .forgot-link:hover {
-            color: #2980b9;
-            text-decoration: underline;
+
+        .forgot-button:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,123,255,0.18);
         }
         
         .success-message {
@@ -347,7 +360,7 @@
         .login-box {
             background: white;
             padding: 2rem;
-            border-radius: 8px;
+            border-radius: 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
@@ -444,6 +457,9 @@
 
                 <button type="submit" class="login-button">Se connecter</button>
             </form>
+            <div class="forgot-password">
+                <a class="forgot-button" href="{{ url_for('forgot_password') }}">Mot de passe oublié ?</a>
+            </div>
         </div>
     </div>
 </body>

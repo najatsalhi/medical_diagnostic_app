@@ -38,15 +38,5 @@
         "email": "",
         "signature": "",
         "role": "medecin"
-    },
-    "dr.najat": {
-        "id": "drnajat",
-        "password": "scrypt:32768:8:1$Ct6jYgCzzhy3ykWg$a0944d20d6f2c0e12fef5e5cfe36d7ff5848855a2f9fc085cb75c93399bcab713ce74c100a7077f4272e0a9f1e34465c68b817037f03521f5230e6b3f8952513",
-        "nom_complet": "najat NAJAT",
-        "specialite": "Médecine Générale",
-        "numero_ordre": "",
-        "email": "",
-        "signature": "",
-        "role": "medecin"
     }
 }

@@ -277,7 +277,7 @@
                 </div>
             </div>
             <div class="actions">
-                <a href="{{ url_for('main_page') }}" class="btn">
+                <a href="{{ url_for('index') }}" class="btn">
                     <span>⬅️ Retour à l'application</span>
                 </a>
             </div>
@@ -303,7 +303,7 @@
         <div class="card">
             <h2>👨‍⚕️ Ajouter un nouveau médecin</h2>
             
-            <form action="{{ url_for('admin_add_doctor') }}" method="POST">
+            <form action="{{ url_for('add_doctor') }}" method="POST">
                 <div class="form-row">
                     <div class="form-col">
                         <div class="form-group">
@@ -371,12 +371,12 @@
 
         <div class="doctors-list">
             <h2>Médecins enregistrés</h2>
-            {% if medecins %}
-                {% for username, info in medecins.items() %}
+            {% if doctors %}
+                {% for username, info in doctors.items() %}
                     <div class="doctor-item">
                         <div class="doctor-info">
-                            <div class="doctor-name">{{ info.nom_complet }}</div>
-                            <div class="doctor-specialty">{{ info.specialite }} - N° {{ info.numero_ordre }}</div>
+                            <div class="doctor-name">{{ info.nom }}</div>
+                            <div class="doctor-specialty">{{ info.specialite }}{% if info.numero_ordre %} - N° {{ info.numero_ordre }}{% endif %}</div>
                         </div>
                         <div class="doctor-actions">
                             <a href="#" class="btn btn-primary btn-small">Modifier</a>

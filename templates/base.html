@@ -160,5 +160,56 @@
             });
         });
     </script>
+    <script>
+        // Ensure main/admin containers have enough top padding so fixed navbar/header don't overlap content.
+        (function() {
+            function adjustTopPadding() {
+                var navbar = document.querySelector('.navbar');
+                var adminHeader = document.querySelector('.admin-header');
+                if (!navbar) return;
+                var navH = navbar.offsetHeight || 0;
+                var headerH = 0;
+                var extra = 12; // small gap
+
+                // On small screens keep header static
+                var isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+                if (adminHeader && !isMobile) {
+                    // if adminHeader is positioned fixed by CSS, compute its height
+                    headerH = adminHeader.offsetHeight || 0;
+                    // ensure the adminHeader is positioned fixed and placed below navbar
+                    adminHeader.style.position = 'fixed';
+                    adminHeader.style.top = (navH) + 'px';
+                    // back button is positioned by CSS inside the header (no JS top adjustment)
+                    // Position the sidebar below the header and set its height
+                    var sidebar = document.querySelector('.admin-sidebar');
+                    if (sidebar) {
+                        var sidebarTop = navH + headerH + 12; // gap
+                        sidebar.style.top = sidebarTop + 'px';
+                        // set height so it doesn't overflow under fixed header
+                        var avail = window.innerHeight - sidebarTop - 20; // bottom gap
+                        sidebar.style.height = (avail > 200 ? avail + 'px' : '200px');
+                    }
+                } else {
+                    // revert to normal flow on mobile or if no adminHeader
+                    if (adminHeader) {
+                        adminHeader.style.position = '';
+                        adminHeader.style.top = '';
+                        adminHeader.style.transform = '';
+                    }
+                    // back button is positioned by CSS inside the header (no JS top adjustment)
+                }
+
+                var padding = (navH + headerH + extra) + 'px';
+                document.querySelectorAll('.container, .admin-container, .admin-main, .main-content').forEach(function(el){
+                    if (el) el.style.paddingTop = padding;
+                });
+            }
+            document.addEventListener('DOMContentLoaded', adjustTopPadding);
+            window.addEventListener('resize', adjustTopPadding);
+            // in case fonts/images load later
+            window.addEventListener('load', adjustTopPadding);
+        })();
+    </script>
 </body>
 </html>
