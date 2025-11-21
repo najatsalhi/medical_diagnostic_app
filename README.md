@@ -820,16 +820,16 @@ def test_complete_workflow(self):
 ## 📞 **SUPPORT ET CONTACT**
 
 ### **Équipe de Développement**
-- **Développeur Principal :** [Votre Nom]
+- **Développeur Principal :** [SALHI NAJAT]
 - **Institution :** CHU Mohammed VI Oujda
-- **Email Support :** support@chu-oujda.ma
+- **Email Support :** CONTACT@chu-oujda.ma
 - **Documentation :** Ce README.md
 
 ### **Signalement de Bugs**
 1. Créer un issue sur le repository Git
 2. Décrire le problème en détail
 3. Inclure les logs d'erreur
-4. Spécifier l'environnement (navigateur, OS)
+
 
 ### **Demandes de Fonctionnalités**
 1. Ouvrir une discussion sur GitHub
