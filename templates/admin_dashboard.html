@@ -20,7 +20,7 @@
         <aside class="admin-sidebar">
             <nav>
                 <ul>
-                    <li><a href="#" id="sidebar-activity" class="sidebar-link" data-target="section-activity">Les Activités</a></li>
+                    <li><a href="#" id="sidebar-services" class="sidebar-link" data-target="section-services">Gestion des Services</a></li>
                     <li><a href="#" id="sidebar-list" class="sidebar-link" data-target="section-list">Liste des Médecins</a></li>
                     <li><a href="#" id="sidebar-add" class="sidebar-link" data-target="section-add">Ajouter un Médecin</a></li>
                     <li><a href="#" id="sidebar-patients" class="sidebar-link" data-target="section-patients">Patients</a></li>
@@ -49,29 +49,36 @@
             </div>
 
             <div class="admin-content">
-                <section id="section-activity" class="admin-section" style="display:none;">
+                <section id="section-services" class="admin-section" style="display:none;">
                     <div class="card">
-                        <h2>🕘 Activité Récente</h2>
-                        <div class="recent-activity" id="recent-activity">
-                            {% if recent_activity %}
-                                {% for item in recent_activity %}
-                                    <div class="activity-item">
-                                        <div class="activity-icon">{{ item.icon }}</div>
-                                        <div class="activity-content">
-                                            <div class="activity-title">{{ item.title }}</div>
-                                            <div class="activity-time">{{ item.time }}</div>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            {% else %}
-                                <div class="activity-item">
-                                    <div class="activity-icon">ℹ️</div>
-                                    <div class="activity-content">
-                                        <div class="activity-title">Aucune activité récente</div>
-                                    </div>
-                                </div>
-                            {% endif %}
+                        <h2>🏥 Gestion des Services</h2>
+                        <p>Liste des services .</p>
+                        <div style="display:flex;gap:8px;align-items:center;margin-top:8px;">
+                            <button id="reload-services-btn" type="button" class="btn btn-reset"></button>
+                            <small style="color:var(--text-light);">(Regénère les services à partir de <code>models/disease_mapping.json</code>)</small>
                         </div>
+
+                        <div id="services-grid" class="admin-actions" style="margin-top:16px;">
+                            <!-- Service cards will be rendered here by admin.js -->
+                        </div>
+
+                        <hr>
+                        <h3>➕ Ajouter un Service</h3>
+                        <form id="add-service-form" method="POST" action="{{ url_for('add_service') }}">
+                            <div class="form-group">
+                                <label for="service_name">Nom du service</label>
+                                <input type="text" id="service_name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service_code">Code du service (optionnel)</label>
+                                <input type="text" id="service_code" name="code">
+                            </div>
+                            <div class="form-group">
+                                <label for="service_description">Description</label>
+                                <textarea id="service_description" name="description" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width:100%;">Ajouter le service</button>
+                        </form>
                     </div>
                 </section>
 

@@ -1,5 +1,16 @@
 [
     {
+        "nom": "fayza",
+        "prenom": "salhi",
+        "cin": "F543683",
+        "age": "20",
+        "sex": "Femme",
+        "disease": "Virus Ebola",
+        "doctor": "Dr. Marie Martin",
+        "service": "Service Infectiologie",
+        "date": "21/11/2025 12:42"
+    },
+    {
         "nom": "karima",
         "prenom": "SALHI",
         "cin": "f345709",

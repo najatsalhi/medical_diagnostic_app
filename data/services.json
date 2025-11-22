@@ -1,0 +1,620 @@
+[
+    {
+        "id": "serviceinfectiologie",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicemedecinegenerale",
+        "name": "Service Medecine Generale",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicedermatologie",
+        "name": "Service Dermatologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepneumologie",
+        "name": "Service Pneumologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceendocrinologie",
+        "name": "Service Endocrinologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceorl",
+        "name": "Service ORL",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepsychiatrie",
+        "name": "Service Psychiatrie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceendocrinologie2",
+        "name": "Service Endocrinologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicegastroentrologie",
+        "name": "Service Gastro-entÃ©rologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicegastroentrologie2",
+        "name": "Service Gastro-entÃ©rologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicerhumatologie",
+        "name": "Service Rhumatologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepsychiatrie2",
+        "name": "Service Psychiatrie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceoncologie",
+        "name": "Service Oncologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceneurologie",
+        "name": "Service Neurologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceurologie",
+        "name": "Service Urologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie2",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicehpatologie",
+        "name": "Service HÃ©patologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceoncologie2",
+        "name": "Service Oncologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceneurologie2",
+        "name": "Service Neurologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceneurologie3",
+        "name": "Service Neurologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceorl2",
+        "name": "Service ORL",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicegastroentrologie3",
+        "name": "Service Gastro-entÃ©rologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepsychiatrie3",
+        "name": "Service Psychiatrie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepneumologie2",
+        "name": "Service Pneumologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceneurologie4",
+        "name": "Service Neurologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceoncologie3",
+        "name": "Service Oncologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicecardiologie",
+        "name": "Service Cardiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceneurologie5",
+        "name": "Service Neurologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicecardiologie2",
+        "name": "Service Cardiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceurologie2",
+        "name": "Service Urologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicerhumatologie2",
+        "name": "Service Rhumatologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepneumologie3",
+        "name": "Service Pneumologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicecardiologie3",
+        "name": "Service Cardiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepneumologie4",
+        "name": "Service Pneumologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceneurologie6",
+        "name": "Service Neurologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicecardiologie4",
+        "name": "Service Cardiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepsychiatrie4",
+        "name": "Service Psychiatrie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicedermatologie2",
+        "name": "Service Dermatologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie3",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicehpatologie2",
+        "name": "Service HÃ©patologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceophtalmologie",
+        "name": "Service Ophtalmologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicehpatologie3",
+        "name": "Service HÃ©patologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie4",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceneurologie7",
+        "name": "Service Neurologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicenphrologie",
+        "name": "Service NÃ©phrologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicerhumatologie3",
+        "name": "Service Rhumatologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicedermatologie3",
+        "name": "Service Dermatologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceoncologie4",
+        "name": "Service Oncologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepneumologie5",
+        "name": "Service Pneumologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceophtalmologie2",
+        "name": "Service Ophtalmologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie5",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie6",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicecardiologie5",
+        "name": "Service Cardiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicerhumatologie4",
+        "name": "Service Rhumatologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicehmatologie",
+        "name": "Service HÃ©matologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceendocrinologie3",
+        "name": "Service Endocrinologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceoncologie5",
+        "name": "Service Oncologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepneumologie6",
+        "name": "Service Pneumologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceoncologie6",
+        "name": "Service Oncologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceendocrinologie4",
+        "name": "Service Endocrinologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepsychiatrieinfantile",
+        "name": "Service Psychiatrie Infantile",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicedermatologie4",
+        "name": "Service Dermatologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicegyncologie",
+        "name": "Service GynÃ©cologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie7",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceophtalmologie3",
+        "name": "Service Ophtalmologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepneumologie7",
+        "name": "Service Pneumologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicehmatologie2",
+        "name": "Service HÃ©matologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicehmatologie3",
+        "name": "Service HÃ©matologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie8",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicegyncologie2",
+        "name": "Service GynÃ©cologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceranimation2",
+        "name": "Service RÃ©animation",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepneumologie8",
+        "name": "Service Pneumologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie9",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie10",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceoncologie7",
+        "name": "Service Oncologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceurgences",
+        "name": "Service Urgences",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceoncologie8",
+        "name": "Service Oncologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie11",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicecardiologie6",
+        "name": "Service Cardiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceneurologie8",
+        "name": "Service Neurologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicegastroentrologie4",
+        "name": "Service Gastro-entÃ©rologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicegyncologie3",
+        "name": "Service GynÃ©cologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicerhumatologie5",
+        "name": "Service Rhumatologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie12",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceoncologie9",
+        "name": "Service Oncologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie13",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie14",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicenphrologie2",
+        "name": "Service NÃ©phrologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicehpatologie4",
+        "name": "Service HÃ©patologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceendocrinologie5",
+        "name": "Service Endocrinologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceurologie3",
+        "name": "Service Urologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceorl3",
+        "name": "Service ORL",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceneurologie9",
+        "name": "Service Neurologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceneurologie10",
+        "name": "Service Neurologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceneurologie11",
+        "name": "Service Neurologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicegastroentrologie5",
+        "name": "Service Gastro-entÃ©rologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceinfectiologie15",
+        "name": "Service Infectiologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicegastroentrologie6",
+        "name": "Service Gastro-entÃ©rologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceurologie4",
+        "name": "Service Urologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicepsychiatrie5",
+        "name": "Service Psychiatrie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "servicerhumatologie6",
+        "name": "Service Rhumatologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceoncologie10",
+        "name": "Service Oncologie",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    },
+    {
+        "id": "serviceorl4",
+        "name": "Service ORL",
+        "code": "",
+        "description": "Service auto-généré à partir des mappings de maladies"
+    }
+]

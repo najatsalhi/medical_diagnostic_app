@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function(){
             // load immediately and start polling
             loadRecentActivity();
             if(typeof startActivityAutoRefresh === 'function') startActivityAutoRefresh();
+        } else if(id === 'section-services'){
+            // load services when the services section is shown
+            if(typeof loadServices === 'function') loadServices();
         } else {
             if(typeof stopActivityAutoRefresh === 'function') stopActivityAutoRefresh();
         }
@@ -103,6 +106,11 @@ document.addEventListener('DOMContentLoaded', function(){
         const actLink = Array.from(links).find(l => l.dataset.target === 'section-activity');
         if(actLink){ actLink.click(); }
     }
+        // If the hash is #services open services
+        if(window.location.hash === '#services'){
+            const svcLink = Array.from(links).find(l => l.dataset.target === 'section-services');
+            if(svcLink){ svcLink.click(); }
+        }
 });
 
 // Patients table filter by doctor
@@ -140,3 +148,110 @@ function stopActivityAutoRefresh() {
   if(activityInterval) { clearInterval(activityInterval); activityInterval = null; }
 }
 // call startActivityAutoRefresh() when activity section is shown
+
+// Services: load and render service cards, handle add-service
+async function loadServices() {
+    try {
+        const resp = await fetch('/api/admin/services', {credentials: 'same-origin'});
+        if(!resp.ok) { console.warn('Could not fetch services', resp.status); return; }
+        const data = await resp.json();
+        renderServices(data.services || []);
+    } catch (e) {
+        console.warn('Error fetching services', e);
+    }
+}
+
+function renderServices(list) {
+    const grid = document.getElementById('services-grid');
+    if(!grid) return;
+    grid.innerHTML = '';
+    if(!list || list.length === 0) {
+        grid.innerHTML = '<p>Aucun service défini pour le moment.</p>';
+        return;
+    }
+    // Deduplicate by id or by normalized name (preserve first occurrence)
+    const seen = new Set();
+    const unique = [];
+    list.forEach(s => {
+        if(!s || typeof s !== 'object') return;
+        const key = (s.id && String(s.id)) || (s.name && String(s.name).trim().toLowerCase());
+        if(!key) return;
+        if(seen.has(key)) return;
+        seen.add(key);
+        unique.push(s);
+    });
+
+    unique.forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'action-card';
+        card.innerHTML = `
+            <div class="action-title">${s.name || ''}</div>
+            <div style="margin:8px 0;color:var(--text-light);">${s.code ? ('Code: '+s.code) : ''}</div>
+            <div style="font-size:14px;color:#444;margin-bottom:12px;">${s.description || ''}</div>
+            <div style="margin-top:auto;display:flex;gap:8px;">
+                <button class="btn btn-primary btn-edit" data-id="${s.id}">Modifier</button>
+                <button class="btn btn-danger btn-delete" data-id="${s.id}">Supprimer</button>
+            </div>`;
+        grid.appendChild(card);
+    });
+
+    // wire delete/edit buttons (delete will call API)
+    grid.querySelectorAll('.btn-delete').forEach(btn => {
+        btn.addEventListener('click', async function(){
+            const id = this.dataset.id;
+            if(!confirm('Supprimer ce service ?')) return;
+            try {
+                const r = await fetch('/admin/delete-service', {method:'POST', credentials:'same-origin', headers:{'Content-Type':'application/json'}, body: JSON.stringify({id})});
+                if(r.ok) { loadServices(); }
+                else alert('Suppression échouée');
+            } catch(e){ console.warn(e); alert('Erreur suppression'); }
+        });
+    });
+}
+
+// Handle add-service form via AJAX (enhances UX but form still works by POST)
+document.addEventListener('DOMContentLoaded', function(){
+    const form = document.getElementById('add-service-form');
+    if(!form) return;
+    form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        const formData = new FormData(form);
+        const payload = {};
+        formData.forEach((v,k) => payload[k]=v);
+        try {
+            const resp = await fetch(form.action, {method:'POST', credentials:'same-origin', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
+            if(resp.ok){
+                // clear form
+                form.reset();
+                // reload services
+                loadServices();
+                alert('Service ajouté');
+            } else {
+                const txt = await resp.text();
+                alert('Erreur: ' + txt);
+            }
+        } catch (err){ console.warn(err); alert('Erreur réseau'); }
+    });
+});
+
+// Reload services from disease mapping button
+document.addEventListener('DOMContentLoaded', function(){
+    const btn = document.getElementById('reload-services-btn');
+    if(!btn) return;
+    btn.addEventListener('click', async function(){
+        if(!confirm('Recharger la liste des services depuis le mapping des maladies ? Cela remplacera la liste actuelle.')) return;
+        try {
+            const resp = await fetch('/admin/reload-services-from-mapping', {method: 'POST', credentials: 'same-origin'});
+            if(resp.ok) {
+                await loadServices();
+                alert('Services rechargés depuis le mapping.');
+            } else {
+                const txt = await resp.text();
+                alert('Échec du rechargement: ' + txt);
+            }
+        } catch (e) {
+            console.warn('Error reloading services', e);
+            alert('Erreur réseau lors du rechargement.');
+        }
+    });
+});

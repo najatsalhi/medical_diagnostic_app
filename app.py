@@ -211,6 +211,214 @@ def api_admin_recent_activity():
 
     return jsonify({'recent_activity': recent_activity})
 
+
+@app.route('/api/admin/services')
+@login_required
+def api_admin_services():
+    """Return list of services for admin UI."""
+    if not session.get('is_admin'):
+        return jsonify({'error': 'Accès non autorisé'}), 403
+
+    services_path = os.path.join('data', 'services.json')
+    services = []
+    try:
+        if os.path.exists(services_path):
+            with open(services_path, 'r', encoding='utf-8') as sf:
+                services = json.load(sf)
+                if not isinstance(services, list):
+                    services = []
+        # If services file missing or empty, build default services from disease_mapping
+        if not services:
+            # disease_mapping is loaded earlier in module; collect unique service names
+            try:
+                uniq = {}
+                for entry in disease_mapping.values():
+                    svc_name = entry.get('service')
+                    if not svc_name:
+                        continue
+                    key = re.sub(r'[^A-Za-z0-9]', '', svc_name).lower()
+                    # ensure unique id
+                    sid = key or uuid.uuid4().hex[:6]
+                    suffix = 1
+                    while sid in uniq:
+                        suffix += 1
+                        sid = f"{key}{suffix}"
+                    uniq[sid] = {
+                        'id': sid,
+                        'name': svc_name,
+                        'code': '',
+                        'description': f"Service auto-généré à partir des mappings de maladies"
+                    }
+                services = list(uniq.values())
+                # persist defaults so admin can later manage them
+                os.makedirs(os.path.dirname(services_path), exist_ok=True)
+                with open(services_path, 'w', encoding='utf-8') as sf:
+                    json.dump(services, sf, ensure_ascii=False, indent=4)
+            except Exception as e:
+                print(f"Warning: could not build default services from disease_mapping: {e}")
+                services = []
+    except Exception as e:
+        print(f"Warning: could not load services: {e}")
+        services = []
+
+    # Deduplicate services by id and by case-insensitive name, preserving first occurrence
+    try:
+        deduped = []
+        seen_ids = set()
+        seen_names = set()
+        for s in services:
+            if not isinstance(s, dict):
+                continue
+            sid = s.get('id')
+            name = (s.get('name') or '').strip().lower()
+            if sid and sid in seen_ids:
+                continue
+            if name and name in seen_names:
+                continue
+            if sid:
+                seen_ids.add(sid)
+            if name:
+                seen_names.add(name)
+            deduped.append(s)
+        services = deduped
+    except Exception as e:
+        print(f"Warning: could not deduplicate services: {e}")
+
+    return jsonify({'services': services})
+
+
+@app.route('/admin/add-service', methods=['POST'])
+@login_required
+def add_service():
+    if not session.get('is_admin'):
+        flash('Accès non autorisé', 'error')
+        return redirect(url_for('index'))
+
+    # Accept JSON or form-encoded
+    try:
+        if request.is_json:
+            payload = request.get_json()
+            name = payload.get('name', '').strip()
+            code = payload.get('code', '').strip()
+            description = payload.get('description', '').strip()
+        else:
+            name = request.form.get('name', '').strip()
+            code = request.form.get('code', '').strip()
+            description = request.form.get('description', '').strip()
+    except Exception:
+        name = request.form.get('name', '').strip()
+        code = request.form.get('code', '').strip()
+        description = request.form.get('description', '').strip()
+
+    if not name:
+        return ('Le nom du service est requis', 400)
+
+    services_path = os.path.join('data', 'services.json')
+    services = []
+    try:
+        if os.path.exists(services_path):
+            with open(services_path, 'r', encoding='utf-8') as sf:
+                services = json.load(sf)
+                if not isinstance(services, list):
+                    services = []
+    except Exception:
+        services = []
+
+    # create simple unique id
+    base = re.sub(r'[^A-Za-z0-9]', '', name).lower() or uuid.uuid4().hex[:6]
+    sid = base
+    suffix = 1
+    existing_ids = {s.get('id') for s in services if isinstance(s, dict) and s.get('id')}
+    while sid in existing_ids:
+        suffix += 1
+        sid = f"{base}{suffix}"
+
+    new_service = {
+        'id': sid,
+        'name': name,
+        'code': code,
+        'description': description
+    }
+    services.insert(0, new_service)
+
+    try:
+        os.makedirs(os.path.dirname(services_path), exist_ok=True)
+        with open(services_path, 'w', encoding='utf-8') as sf:
+            json.dump(services, sf, ensure_ascii=False, indent=4)
+    except Exception as e:
+        print(f"Warning: could not persist services: {e}")
+        # if request.json was used, return 500
+        if request.is_json:
+            return ('Could not save service', 500)
+        flash('Le service a été créé en mémoire mais la sauvegarde a échoué', 'warning')
+        return redirect(url_for('admin_dashboard'))
+
+    if request.is_json:
+        return jsonify({'service': new_service}), 201
+
+    flash('Service ajouté avec succès', 'success')
+    return redirect(url_for('admin_dashboard'))
+
+
+@app.route('/admin/delete-service', methods=['POST'])
+@login_required
+def delete_service():
+    if not session.get('is_admin'):
+        return ('Accès non autorisé', 403)
+    try:
+        payload = request.get_json() if request.is_json else request.form
+        sid = payload.get('id')
+        if not sid:
+            return ('Missing id', 400)
+        services_path = os.path.join('data', 'services.json')
+        services = []
+        if os.path.exists(services_path):
+            with open(services_path, 'r', encoding='utf-8') as sf:
+                services = json.load(sf)
+        services = [s for s in services if s.get('id') != sid]
+        with open(services_path, 'w', encoding='utf-8') as sf:
+            json.dump(services, sf, ensure_ascii=False, indent=4)
+        return ('', 200)
+    except Exception as e:
+        print(f"Error deleting service: {e}")
+        return ('Internal error', 500)
+
+
+@app.route('/admin/reload-services-from-mapping', methods=['POST'])
+@login_required
+def reload_services_from_mapping():
+    if not session.get('is_admin'):
+        return ('Accès non autorisé', 403)
+
+    services_path = os.path.join('data', 'services.json')
+    try:
+        uniq = {}
+        for entry in disease_mapping.values():
+            svc_name = entry.get('service')
+            if not svc_name:
+                continue
+            key = re.sub(r'[^A-Za-z0-9]', '', svc_name).lower()
+            sid = key or uuid.uuid4().hex[:6]
+            suffix = 1
+            while sid in uniq:
+                suffix += 1
+                sid = f"{key}{suffix}"
+            uniq[sid] = {
+                'id': sid,
+                'name': svc_name,
+                'code': '',
+                'description': f"Service auto-généré à partir des mappings de maladies"
+            }
+
+        services = list(uniq.values())
+        os.makedirs(os.path.dirname(services_path), exist_ok=True)
+        with open(services_path, 'w', encoding='utf-8') as sf:
+            json.dump(services, sf, ensure_ascii=False, indent=4)
+        return ('', 200)
+    except Exception as e:
+        print(f"Error reloading services from mapping: {e}")
+        return ('Erreur interne lors du rechargement', 500)
+
 def generate_pdf_report(prediction_result):
     try:
         html = render_template('pdf_template.html',
