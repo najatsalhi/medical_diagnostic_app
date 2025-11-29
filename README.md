@@ -52,24 +52,38 @@ medical_diagnostic_app/
 ├── 📄 requirements.txt                # Dépendances Python
 │
 ├── 📁 data/
-│   └── 📄 medecins.json              # Base de données médecins
+│   ├── 📄 medecins.json               # Base de données médecins
+│   ├── 📄 medecins.json.bak           # Sauvegarde du fichier médecins
+│   ├── 📄 password_reset_tokens.json  # Tokens réinitialisation mot de passe
+│   ├── 📄 patients.json               # Données patients
+│   ├── 📄 recent_activity.json        # Journal d'activité récent
+│   └── 📄 services.json               # Liste des services/examens
 │
 ├── 📁 models/
-│   ├── 📄 CatBoost_best_model.pkl    # Modèle IA entraîné
-│   └── 📄 disease_mapping.json       # Mapping maladies/recommandations
+│   ├── 📄 CatBoost_best_model.pkl     # Modèle IA entraîné (pickle)
+│   └── 📄 disease_mapping.json        # Mapping maladies/recommandations
+│
+│
+├── 📁 scripts/                        # Scripts utiles (ex. hash passwords)
+│   └── 📄 hash_medecins_passwords.py
 │
 ├── 📁 static/
-│   ├── 🖼️ logo_chu.png              # Logo officiel CHU
-│   ├── 🖼️ chu_background.png        # Image de fond login
-│   ├── 📄 style.css                 # Styles globaux
-│   └── 📄 README_images.md           # Guide images
+│   ├── 🖼️ logo_chu.png                # Logo officiel CHU
+│   ├── 🖼️ chu_background.png          # Image de fond login
+│   ├── 📄 style.css                   # Styles globaux
+│   ├── 📄 admin_full.css              # Styles admin
+│   └── 📄 admin.js                    # JS admin
 │
 └── 📁 templates/
-    ├── 📄 index.html                 # Page principale diagnostic
-    ├── 📄 login.html                 # Page de connexion
-    ├── 📄 result.html                # Page des résultats
-    ├── 📄 forgot_password.html       # Récupération mot de passe
-    └── 📄 pdf_template.html          # Template rapports PDF
+    ├── 📄 index.html                  # Page principale (formulaire de diagnostic)
+    ├── 📄 login.html                  # Page de connexion
+    ├── 📄 result.html                 # Page des résultats
+    ├── 📄 forgot_password.html        # Récupération mot de passe
+    ├── 📄 reset_password.html         # Réinitialisation mot de passe
+    ├── 📄 admin_add_doctor.html       # Formulaire ajout médecin (admin)
+    ├── 📄 admin_dashboard.html        # Dashboard admin
+    ├── 📄 base.html                   # Template de base
+    └── 📄 pdf_template.html           # Template rapports PDF
 ```
 
 ---
